@@ -33,13 +33,16 @@ class EmployeeController extends Controller
         $pb = new \App\Models\Employee();
         $pb->name = $request['name'];
         $pb->project_id = $request['project'];
-        return ($pb->save() == 1) ? back() : "NOT OK";
+
+        return ($pb->save() !== 1) ?
+            redirect('/employees')->with('status_success', 'Employee added!') :
+            redirect('/employees')->with('status_error', 'Employee was not updated!');
     }
 
     public function destroy($id)
     {
         \App\Models\Employee::destroy($id);
-        return redirect('/employees')->with('status_success', 'Post deleted!');
+        return redirect('/employees')->with('status_success', 'Employee deleted!');
     }
 
     public function show($id)
@@ -77,7 +80,7 @@ class EmployeeController extends Controller
 
 
         return ($bp->save() !== 1) ?
-            redirect('/employees/' . $id)->with('status_success', 'Post updated!') :
-            redirect('/employees/' . $id)->with('status_error', 'Post was not updated!');
+            redirect('/employees')->with('status_success', 'Employee updated!') :
+            redirect('/employees/' . $id)->with('status_error', 'Employee was not updated!');
     }
 }

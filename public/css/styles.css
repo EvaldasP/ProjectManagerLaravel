@@ -69,4 +69,10 @@ body {
 #actions input {
   margin-right: 5px;
 }
+
+.alert {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=styles.css.map */

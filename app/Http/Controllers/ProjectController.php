@@ -21,19 +21,23 @@ class ProjectController extends Controller
 
         $this->validate($request, [
 
-            'project_name' => 'required'
+            'project_name' => 'required|unique:projects'
         ]);
 
-        $pb = new \App\Models\Project();
+        $pb = new Project();
         $pb->project_name = $request['project_name'];
-        return ($pb->save() == 1) ? back() : "NOT OK";
+
+        return ($pb->save() !== 1) ?
+            redirect('/projects')->with('status_success', 'Project added!') :
+            redirect('/projects')->with('status_error', 'Project was not updated!');
     }
+
 
 
     public function destroy($id)
     {
-        \App\Models\Project::destroy($id);
-        return redirect('/projects')->with('status_success', 'Post deleted!');
+        Project::destroy($id);
+        return redirect('/projects')->with('status_success', 'Project deleted!');
     }
 
     public function show($id)
@@ -48,16 +52,13 @@ class ProjectController extends Controller
     {
 
         $this->validate($request, [
-            'project_name' => 'required'
+            'project_name' => 'required|unique:projects'
         ]);
-
-
-
         $bp = project::find($id);
         $bp->project_name = $request['project_name'];
 
         return ($bp->save() !== 1) ?
-            redirect('/projects/' . $id)->with('status_success', 'Post updated!') :
-            redirect('/projects/' . $id)->with('status_error', 'Post was not updated!');
+            redirect('/projects')->with('status_success', 'Project updated!') :
+            redirect('/projects/' . $id)->with('status_error', 'Project was not updated!');
     }
 }

@@ -6,11 +6,22 @@
   @csrf
   <label for="title">Project Name:</label>
   <input class="form-control  @error('project_name') required @enderror" type="text" id="project_name" name="project_name">
-  @error('project_name')<p class="required">{{$message}}</p>@enderror
-  <input class="btn btn-outline-primary" type="submit" value="Submit">
+  @error('project_name')<p style="color: red">{{$message}}</p>@enderror
+  <input class="btn btn-outline-primary" type="submit" value="Add">
 </form>
 </div>
 
+@if(session()->has('status_success'))
+  @if(str_contains(session()->get('status_success'), 'added'))
+    <div class="alert alert-success">
+    @elseif(str_contains(session()->get('status_success'), 'updated'))
+    <div class="alert alert-warning">
+    @else
+    <div class="alert alert-primary">
+  @endif
+    {{ session()->get('status_success') }}
+</div>
+@endif
 
 <table class="table table-striped light-dark">
     <thead>
