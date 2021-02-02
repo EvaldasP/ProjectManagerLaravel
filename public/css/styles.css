@@ -1,0 +1,72 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.required {
+  border-color: red;
+}
+
+#addFormCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 80%;
+  margin: auto;
+}
+
+#addForm,
+#EditForm {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 0px;
+}
+
+#addForm input,
+#addForm select,
+#EditForm input,
+#EditForm select {
+  margin-bottom: 6px;
+  padding: 6px 0px;
+}
+
+#EditFormCont {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+}
+
+#actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#actions input {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=styles.css.map */
