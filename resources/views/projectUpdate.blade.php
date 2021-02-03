@@ -10,6 +10,7 @@
     <label  for="project_name">Project Name:</label>
     <input class="form-control @error('project_name') required @enderror" type="text" name="project_name" value="{{ $project['project_name'] }}">
     @error('project_name')<p style="color:red" >{{$message}}</p>@enderror
+    <p>On this project currently working: {{$project->employees->count()}} {{Str::plural('employee',$project->employees->count())}}</p>
     <input class="btn btn-primary" type="submit" value="UPDATE">
 </form>
 </div>

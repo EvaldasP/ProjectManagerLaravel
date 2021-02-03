@@ -18,7 +18,6 @@ class EmployeeController extends Controller
         return view('employees', [
             'employees' => $employees,
             'projects' => $projects
-
         ]);
     }
 

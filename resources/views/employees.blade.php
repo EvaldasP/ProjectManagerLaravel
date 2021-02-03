@@ -1,6 +1,6 @@
 @extends('main')
-
 @section('content')
+
 
 <div id="addFormCont">
 <form id="addForm" method="POST" action="/employees">

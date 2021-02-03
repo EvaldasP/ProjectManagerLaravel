@@ -52,7 +52,7 @@ class ProjectController extends Controller
     {
 
         $this->validate($request, [
-            'project_name' => 'required|unique:projects'
+            'project_name' => 'required|unique:projects,project_name,' . $id . ',id'
         ]);
         $bp = project::find($id);
         $bp->project_name = $request['project_name'];

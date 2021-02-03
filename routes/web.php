@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,14 +16,14 @@ use App\Http\Controllers\ProjectController;
 */
 
 
-Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
 Route::get('/', [EmployeeController::class, 'index']);
 Route::post('/employees', [EmployeeController::class, 'store']);
 Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 Route::get('/employees/{id}', [EmployeeController::class, 'show'])->name('employee.show');
 Route::PUT('/employees/{id}', [EmployeeController::class, 'update'])->name('employee.update');
 
-Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::post('/projects', [ProjectController::class, 'store']);
 Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('project.show');
