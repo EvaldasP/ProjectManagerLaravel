@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="/css/styles.css" >
     <title>ProjectManager</title>
 </head>
-<body>
+<body class="preload">
     @include('partials.header')
-    @yield('content')
 
-     
-
+   
+        @yield('content')
+       
+  <script> </script>
 </body>
+
 </html>

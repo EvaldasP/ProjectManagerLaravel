@@ -1,9 +1,11 @@
 @extends('main')
-
 @section('content')
 
 <div id="EditFormCont">
-    <h2>Update Employee</h2>
+    <div class="logo">
+        <img style="width: 100px" src="/employee.svg" alt="">
+        <h2>Update Employee</h2>
+      </div>
 <form id="EditForm" action="{{route('employee.update', $employee['id'])}}" method="POST">
     @method('PUT') @csrf 
     <label for="name">Employee Name:</label>

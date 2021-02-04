@@ -2,6 +2,8 @@
 @section('content')
 
 
+
+@if(Auth::check())
 <div id="addFormCont">
 <form id="addForm" method="POST" action="/employees">
   @csrf
@@ -18,8 +20,7 @@
   <input class="btn btn-outline-primary" type="submit" value="Add">
 </form>
 </div>
-
-
+@endif
 
 @if(session()->has('status_success'))
   @if(str_contains(session()->get('status_success'), 'added'))
@@ -29,7 +30,6 @@
     @else
     <div class="alert alert-primary">
   @endif
-
     {{ session()->get('status_success') }}
 </div>
 @endif
@@ -53,16 +53,17 @@
         <td>{{$index}}</td>
         <td>{{$employee['name']}}</td>
         <td>{{$employee->project['project_name']}}</td>
-
+      
         <td id="actions">
-          <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST">
-          @method('DELETE') @csrf
-          <input class="btn btn-danger" type="submit" value="DELETE">
-          </form>
-
-          <form action="{{ route('employee.show', $employee['id']) }}" method="GET">
-            <input class="btn btn-primary" type="submit" value="UPDATE">
-          </form>
+          @if(Auth::check())
+            <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST">
+            @method('DELETE') @csrf
+            <input class="btn btn-danger" type="submit" value="DELETE">
+            </form>
+            <form action="{{ route('employee.show', $employee['id']) }}" method="GET">
+              <input class="btn btn-primary" type="submit" value="UPDATE">
+            </form>
+          @endif
         </td>
 
         </tr>
@@ -72,4 +73,5 @@
         @endforeach
     </tbody>
   </table>
+  
 @endsection

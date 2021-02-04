@@ -3,8 +3,10 @@
 @section('content')
 
 <div id="EditFormCont">
-    <h2>Update Project</h2>
-
+    <div class="logo">
+        <img style="width: 100px" src="/clipboard.svg" alt="">
+        <h2>Update Project</h2>
+      </div>
 <form id="EditForm" action="{{{route('project.update', $project['id'])}}}" method="POST">
     @method('PUT') @csrf 
     <label  for="project_name">Project Name:</label>

@@ -1,6 +1,7 @@
 @extends('main')
 @section('content')
 
+@if(Auth::check())
 <div id="addFormCont">
 <form id="addForm" method="POST" action="/projects">
   @csrf
@@ -10,6 +11,7 @@
   <input class="btn btn-outline-primary" type="submit" value="Add">
 </form>
 </div>
+@endif
 
 @if(session()->has('status_success'))
   @if(str_contains(session()->get('status_success'), 'added'))
@@ -47,8 +49,8 @@
           {{$employee['name']}}
           @endforeach
         </td>
-        
           <td id="actions">
+            @if(Auth::check())
             <form action="{{ route('project.destroy', $project['id']) }}" method="POST">
             @method('DELETE') @csrf
             <input class="btn btn-danger" type="submit" value="DELETE">
@@ -57,8 +59,8 @@
             <form action="{{ route('project.show', $project['id']) }}" method="GET">
               <input class="btn btn-primary" type="submit" value="UPDATE">
             </form>
+            @endif
           </td>
-        
         </tr>
         @php
         $index++;

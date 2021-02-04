@@ -1,5 +1,13 @@
 body {
     font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
 }
 
 .required {
@@ -11,6 +19,8 @@ body {
     justify-content: start;
     width: 80%;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #addForm,
@@ -21,7 +31,7 @@ body {
     margin: 20px 0px;
     input,
     select {
-        margin-bottom: 6px;
+        margin-bottom: 15px;
         padding: 6px 0px;
     }
 }
@@ -31,13 +41,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    #EditForm {
-    }
+    margin-bottom: 0px;
 }
 
 .table {
-    width: 80%;
+    width: 80% !important;
     margin: auto;
+}
+.table td,
+.table th {
+    border-top: 0px !important;
 }
 
 #actions {
@@ -51,4 +64,69 @@ body {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+}
+
+.navWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    #addForm {
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+.navbar-nav > .active > a > h3 {
+    color: #1abc9c;
+}
+.navbar-nav {
+    display: flex;
+
+    align-items: center;
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+h3 {
+    transition: 1s;
+}
+h3:hover {
+    color: #1abc9c;
+}
+
+.contentdiv {
+    position: relative;
+    min-height: 65vh;
+}
+
+.alert {
+    margin-top: 0px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        margin-top: 10px;
+        font-size: 2rem;
+        color: #ffc107;
+    }
+    img {
+        margin-bottom: 15px;
+    }
 }

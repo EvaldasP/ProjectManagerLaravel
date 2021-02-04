@@ -24,12 +24,12 @@ class ProjectController extends Controller
             'project_name' => 'required|unique:projects'
         ]);
 
-        $pb = new Project();
-        $pb->project_name = $request['project_name'];
+        $p = new Project();
+        $p->project_name = $request['project_name'];
 
-        return ($pb->save() !== 1) ?
-            redirect('/projects')->with('status_success', 'Project added!') :
-            redirect('/projects')->with('status_error', 'Project was not updated!');
+        return ($p->save() !== 1) ?
+            redirect('projects')->with('status_success', 'Project added!') :
+            redirect('projects')->with('status_error', 'Project was not updated!');
     }
 
 
@@ -54,10 +54,10 @@ class ProjectController extends Controller
         $this->validate($request, [
             'project_name' => 'required|unique:projects,project_name,' . $id . ',id'
         ]);
-        $bp = project::find($id);
-        $bp->project_name = $request['project_name'];
+        $p = project::find($id);
+        $p->project_name = $request['project_name'];
 
-        return ($bp->save() !== 1) ?
+        return ($p->save() !== 1) ?
             redirect('/projects')->with('status_success', 'Project updated!') :
             redirect('/projects/' . $id)->with('status_error', 'Project was not updated!');
     }
