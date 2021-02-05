@@ -12,11 +12,7 @@
 </head>
 <body class="preload">
     @include('partials.header')
-
-   
         @yield('content')
-       
   <script> </script>
 </body>
-
 </html>
