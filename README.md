@@ -1,4 +1,12 @@
-## Project Manager PHP
+## Project Manager Laravel
+
+## Features
+
+-   View only and Editor mode
+
+-   Create new employee
+
+-   Create new project
 
 ## Features
 
@@ -18,9 +26,9 @@
 
 2.  Dublicate .env.example file and rename one to .env
 
-    inside .env file edit:" _DB_PASSWORD=mysql_"
+    -   inside .env file edit:" _DB_PASSWORD=mysql_"
 
-3.  Open MySQL Workbench connect to localhost connection or create one
+3.  Open MySQL Workbench, connect to localhost connection or create one
 
     -   with username "_root_"
 
@@ -36,6 +44,10 @@
 
     It will create database called "_projectmanagerlaravel_" with needed data
 
-6.  Open PowerShell/GitBash in project folder write "_php artisan serv_"
+6.  Open PowerShell/GitBash in project folder
 
-    Press link. Done
+    -   write "_composer install_"
+
+    -   write "_php artisan serv_"
+
+    -   Press link. Done
