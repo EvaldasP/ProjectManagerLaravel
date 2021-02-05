@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index()
-
     {
         $projects = Project::all();
         return view('projects', [
@@ -18,9 +17,7 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-
         $this->validate($request, [
-
             'project_name' => 'required|unique:projects'
         ]);
 
@@ -50,7 +47,6 @@ class ProjectController extends Controller
 
     public function update($id, Request $request)
     {
-
         $this->validate($request, [
             'project_name' => 'required|unique:projects,project_name,' . $id . ',id'
         ]);

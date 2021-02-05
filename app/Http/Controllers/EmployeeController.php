@@ -14,7 +14,6 @@ class EmployeeController extends Controller
         $employees = Employee::all();
         $projects = Project::all();
 
-
         return view('employees', [
             'employees' => $employees,
             'projects' => $projects
