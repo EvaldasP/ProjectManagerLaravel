@@ -8,14 +8,6 @@
 
 -   Create new project
 
-## Features
-
--   View only and Editor mode
-
--   Create new employee
-
--   Create new project
-
 -   Update employee/project
 
 -   Delete employee/project
