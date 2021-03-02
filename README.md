@@ -13,7 +13,6 @@
     <a href="https://github.com/EvaldasP/ProjectManagerLaravel"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/EvaldasP/ProjectManagerLaravel">View Demo</a>
     ·
     <a href="https://github.com/EvaldasP/ProjectManagerLaravel">Report Bug</a>
     ·
